@@ -1,34 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Base de Datos </ion-title>
+    <ion-title> Blank </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Base de datos</ion-title>
+      <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-item>
-    <ion-label position="fixed">NombreProducto</ion-label> 
-    <ion-input placeholder="Escribe el nombre" [(ngModel)]="name"required></ion-input>
+  <ion-item lines="none">
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input
+      (keyup.enter)="addPerson(name)"
+      placeholder="Introduce el nombre"
+      [(ngModel)]="name"
+      required
+    ></ion-input>
   </ion-item>
+  <ion-button color="success" expand="full" (click)="addPerson(name)">Añadir</ion-button><br />
 
-  <ion-item lines="nones">
-    <ion-label position="fixed">Age</ion-label> 
-    <ion-input [(ngModel)]="age" type="number" ></ion-input> 
-  </ion-item>  
+  <dir>
+    <ion-text id="empty-list" color="warning" *ngIf="people.length==0"
+      >No exiten personas aun</ion-text
+    >
+  </dir>
 
-  <ion-button color="success" expand="full" (addPerson)="addPerson(name)">Añadir</ion-button> 
-
-  <div>
-    <ion-text id="empty-list" color="primary" *ngIf="people.length == 0">No existen personas por ahora</ion-text>
-  </div>
-
-  <!--Podemos insertar el componente ya que lo hemos declarado en nuestro home.module-->
-  <!--Gracias al ngFor podemos repetir el trozo de html que queramos -->
-    <app-person *ngFor="let person of people" [data]= "person" (onremove)="removePerson($event)"></app-person>
-    
+  <!--Recorre el bucle y pasamos la variable person por el campo data.
+  Y envia este campo con la informacion al componente data-->
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let person of people" size="12" size-sm="4">
+        <app-person
+          [data]="person"
+          (onremove)="removePerson($event)"
+        ></app-person>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

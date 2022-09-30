@@ -1,9 +1,16 @@
 ion-content{
   --padding-top:20px;
-  --padding-start: 20px;
+  --padding-start:20px;
+  --padding-end: 20px;
 }
 
-ion-button{
-  max-width: 450px;
-  position:center;
+
+ionic-text#empty-list{
+  --padding-start:20px;
+  --padding-end: 20px;
+}
+
+ion-grid{
+  --padding-start:20px;
+  --padding-end: 20px;
 }

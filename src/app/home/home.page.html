@@ -21,7 +21,7 @@
     <ion-input [(ngModel)]="age" type="number" ></ion-input> 
   </ion-item>  
 
-  <ion-button color="success" expand="full" (click)="addPerson(name)">Añadir</ion-button> 
+  <ion-button color="success" expand="full" (addPerson)="addPerson(name,age)">Añadir</ion-button> 
 
   <div>
     <ion-text id="empty-list" color="primary" *ngIf="people.length == 0">No existen personas por ahora</ion-text>
@@ -29,6 +29,6 @@
 
   <!--Podemos insertar el componente ya que lo hemos declarado en nuestro home.module-->
   <!--Gracias al ngFor podemos repetir el trozo de html que queramos -->
-    <app-person *ngFor="let person of people" [data]= "person" (onremove)="($event)"></app-person>
+    <app-person *ngFor="let person of people" [data]= "person" (onremove)="removePerson($event)"></app-person>
     
 </ion-content>

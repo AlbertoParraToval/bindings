@@ -8,6 +8,7 @@ import { PersonComponent } from './person/person.component';
 
 @NgModule({
   imports: [
+    //CoreModule más adelante lo veremos. (Compartidos los componentes entre los diferentes modulos)
     CommonModule,
     FormsModule,
     IonicModule,

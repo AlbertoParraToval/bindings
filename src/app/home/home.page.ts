@@ -9,7 +9,7 @@ import { Person } from "./person/person.component";
 
 export class HomePage {
   name: string = 'Alfonso';
-  age: any;
+  age: number;
   constructor() {}
   id: number = 0;
   people: Person[] = [];

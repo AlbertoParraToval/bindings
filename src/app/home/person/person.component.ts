@@ -1,46 +1,46 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 export interface Person {
-  age: any;
+  age: number;
   id: number;
   name: string;
 }
 
 @Component({
-  selector: 'app-person',
-  templateUrl: './person.component.html',
-  styleUrls: ['./person.component.scss'],
+  selector: 'app-person', //etiqueta
+  templateUrl: './person.component.html', //etiqueta html
+  styleUrls: ['./person.component.scss'], //etiqueta scss
 })
-
-//Declaramos un evento de
-
 export class PersonComponent implements OnInit, OnDestroy {
   private _data: Person;
 
-  @Output() onremove = new EventEmitter;
-  
+  @Output() onremove = new EventEmitter();
+
+  //Para ver los puntos de ruptura y ver como cambian las variables durante el proceso de añadir y eliminar.
+  //@Input('data') -> No tienes control sobre la variable
+
   @Input('data') set data(n: Person) {
     this._data = n;
   }
 
-  get name(): Person {
+  get data(): Person {
     return this._data;
   }
 
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnDestroy(): void {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   onRemove() {
     this.onremove.next(this.data.id);
   }
-
-  
-
 }

@@ -21,7 +21,7 @@ export interface Person {
 export class PersonComponent implements OnInit, OnDestroy {
   private _data: Person;
 
-  @Output() onremove = new EventEmitter(); //Comunicarte desde el hijo al padre, es un evento donde utilizamos EvenEmitter(), siendo esta un objeto con muchas variables. 
+  @Output() onremove = new EventEmitter(); //Comunicarte desde el hijo al padre, es un evento donde utilizamos EvenEmitter(), siendo esta un objeto con muchas variables.
 
   //Para ver los puntos de ruptura y ver como cambian las variables durante el proceso de añadir y eliminar.
   //@Input('data') -> No tienes control sobre la variable
@@ -30,7 +30,7 @@ export class PersonComponent implements OnInit, OnDestroy {
     this._data = n;
   }
 
-  get data(){
+  get data() {
     return this._data;
   }
 

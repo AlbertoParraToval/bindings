@@ -23,10 +23,11 @@ export class HomePage {
   }
 
   removePerson(id: number) {
+    this.people = this.people.filter(p => p.id != id); //Con esto filtramos que id se borra y los demas se dejan
     var index = this.people.findIndex((p) => {
       return p.id == id;
     });
-    if ((index) => 0) {
+    if ((index) >= 0) {
       this.people.splice(index, 1);
     }
   }

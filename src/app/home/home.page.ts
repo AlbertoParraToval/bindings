@@ -8,7 +8,7 @@ import { Person } from "./person/person.component";
 })
 
 export class HomePage {
-  name: string = '';
+  name: string = 'Alfonso';
   age: any;
   constructor() {}
   id: number = 0;

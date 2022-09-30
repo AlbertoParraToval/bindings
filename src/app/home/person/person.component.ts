@@ -30,7 +30,7 @@ export class PersonComponent implements OnInit, OnDestroy {
     this._data = n;
   }
 
-  get data(): Person {
+  get data(){
     return this._data;
   }
 

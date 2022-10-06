@@ -3,17 +3,18 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
+
 import { HomePageRoutingModule } from './home-routing.module';
 import { PersonComponent } from './person/person.component';
 
+
 @NgModule({
   imports: [
-    //CoreModule más adelante lo veremos. (Compartidos los componentes entre los diferentes modulos)
     CommonModule,
     FormsModule,
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage,PersonComponent] //Lugar donde declaramos los componentes en el modulo
+  declarations: [HomePage, PersonComponent]
 })
 export class HomePageModule {}
